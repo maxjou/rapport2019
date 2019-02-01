@@ -6,13 +6,14 @@ intern kurser som Alten håller för interna och externa konsulter.
 
 ## Problemformulering
 
-Idag använder de diverse excell dokument för att kunna planera deras kurser. De
-hanterar allt från registrering av kund till fakturering genom olika dokument.
-Appen skall inte skapas från scratch utan det finns en version av applikationen
-men den är inte stabil nog att använda. Under förra LIA perioden optimerade vi
-appen så att den klarar av att skala. Vi kommer under den här tiden fortsätta
-optimering men också implementera följande funktioner som är krav från kunden.
-
+Idag använder trainingteamet på alten  diverse exceldokument för att kunna
+planera deras kurser. De hanterar allt från registrering av kund till
+fakturering genom olika dokument. Appen skall inte skapas från scratch utan det
+finns en version av applikationen men den är inte stabil nog att använda. Under
+förra LIA perioden optimerade vi appen så att den klarar av att skala. Vi kommer
+under den här tiden fortsätta optimering men också implementera följande
+funktioner som är krav från kunden.
+/
 * Sökfunktion
 * Filtrering 
 * Olika roller
@@ -34,4 +35,36 @@ Projectowner.
 * Outlook integration
 * Budget vy.
 * Buggfixar
-* 
+
+Ovanstående punkter är det som är planerat nu. Det kommer förmodligen ändras och
+"tickets" kommer läggas till.
+
+## Mål
+
+Punkter som kommer beröras.
+* Devops - då vi kommer skapa en testmiljö samt dockerisera produktionsmiljön.
+  AWS -amazon web services.
+* Security - vi kommer skapa en fungerande roll system och olika vyer beroende
+  på vem det är som är inloggad.
+* Ad sync kommer implemeneteras för outlook in i vår applikation. 
+* Java backend, endpoints, logik.
+* Angular frontend för applikationen.
+
+## Önskemål om litteratur
+
+Spring in Action verkar vara en bra bok.
+
+## Tidsplan
+Som det ser ut just nu. 
+
+* v1 - 2 test miljö och säkerhet.
+* v3 - 4 buggfixar och lanserinng av en version.
+* v5- 6 outlook.
+
+Utöver det vet vi inte i dagsläget. Kan komma att ändras beroende på vad kunden
+vill att vi satsar på.
+
+
+I och med att projektbeskrivnignen skall vara i direkt anknytning till rapporten
+samt redovisningen kommer detta dokuement uppdateras vid ett senare skede. 
+
