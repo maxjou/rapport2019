@@ -20,3 +20,27 @@ Möte kring hur det går
 Dagordning
 * Se till att spring security fungerar. 
 * Skicka in till Anders-
+
+
+### 2019-02-05
+
+1. Flödesschema 
+2. Testmiljö
+2. Buggar
+3. Inlogging
+
+* Datum hoppar. - satt 21 men blev 20. satt 23 blev 22. 
+* Skapa en lista/flödeschema med all information. 
+* Kalendern-  startdatum för varje kurs skall hamna i resultat. Allt som böjar i
+  februari skall vara i februari.
+
+  Idag hade vi vårt första initiella möte med kund då vi bestämde hur vi skall
+  arbeta under kommande projekt. Att notera är att vi diskuterar ifall vi skall
+  använda Altens AD för inloggingen eller om vi skall skapa ett eget. 
+
+### 2019-05-06
+
+Dagordning:
+* Skapa kravspec
+* Fixa mockdata.
+* Datumbuggen
