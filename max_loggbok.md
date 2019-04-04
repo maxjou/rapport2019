@@ -44,3 +44,27 @@ Dagordning:
 * Skapa kravspec
 * Fixa mockdata.
 * Datumbuggen
+* Ta bort funktion att klicka må kalender
+
+Möte: 
+
+Börja med att få igång testmiljö. 
+
+Skapa egna konton kan vi börja med att implementera. 
+
+Skapa data via mockaroo. I och med att vi måste vänta på godkännande frånt it.
+
+Outlook integration har inte med AD:et att göra. 
+
+### 2019-05-07
+
+Obligatoriska bugg-fixar frontend för kund. Varningar när man skapar en
+användare och att alla modaler skall vara i olika komponenter. 
+
+Blockchain workshop. Mycket intressant. 
+
+
+### 2019-05-08
+
+Skapa en testmiljö. 
+
