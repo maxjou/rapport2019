@@ -1,19 +1,19 @@
 # Projektbeskrivning Training
 
 Training projektet är en applikation tänkt för att underlätta hantering av
-intern kurser som Alten håller för interna och externa konsulter.  
+kurser som Alten håller för interna och externa konsulter.  
 
 
 ## Problemformulering
 
-Idag använder trainingteamet på alten  diverse exceldokument för att kunna
+Idag använder trainingteamet på alten diverse exceldokument för att kunna
 planera deras kurser. De hanterar allt från registrering av kund till
 fakturering genom olika dokument. Appen skall inte skapas från scratch utan det
 finns en version av applikationen men den är inte stabil nog att använda. Under
 förra LIA perioden optimerade vi appen så att den klarar av att skala. Vi kommer
-under den här tiden fortsätta optimering men också implementera följande
+under den här tiden fortsätta med optimeringen samt också implementera följande
 funktioner som är krav från kunden.
-/
+
 * Sökfunktion
 * Filtrering 
 * Olika roller
@@ -42,8 +42,9 @@ Ovanstående punkter är det som är planerat nu. Det kommer förmodligen ändra
 ## Mål
 
 Punkter som kommer beröras.
+
 * Devops - då vi kommer skapa en testmiljö samt dockerisera produktionsmiljön.
-  AWS -amazon web services.
+  Samt få upp det i molnet med AWS -amazon web services.
 * Security - vi kommer skapa en fungerande roll system och olika vyer beroende
   på vem det är som är inloggad.
 * Ad sync kommer implemeneteras för outlook in i vår applikation. 
@@ -66,5 +67,5 @@ vill att vi satsar på.
 
 
 I och med att projektbeskrivnignen skall vara i direkt anknytning till rapporten
-samt redovisningen kommer detta dokuement uppdateras vid ett senare skede. 
+samt redovisningen kommer detta dokument uppdateras vid ett senare skede. 
 
