@@ -1,8 +1,38 @@
 \documentclass{article}
 \usepackage{lipsum}
 \usepackage{graphicx}
+\usepackage[swedish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
 \usepackage{hyperref}
 \usepackage[margin=1in,left=1.5in,includefoot]{geometry}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{accsupp}
+
+\definecolor{javared}{rgb}{0.6,0,0} % for strings
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
+\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
+\definecolor{backgroundcolor}{rgb}{0.95,0.95,0.95} % backgroundcolor
+
+\lstset{
+language=Java,
+basicstyle=\ttfamily,
+keywordstyle=\color{javapurple}\bfseries,
+stringstyle=\color{javared},
+commentstyle=\color{javagreen},
+morecomment=[s][\color{javadocblue}]{/**}{*/},
+backgroundcolor=\color{backgroundcolor},
+numbers=left,
+numberstyle=\tiny\color{black},
+breaklines=true,
+stepnumber=2,
+numbersep=10pt,
+tabsize=4,
+showspaces=false,
+showstringspaces=false,
+frame=single}
 \hypersetup{
     colorlinks,
     citecolor=black,
@@ -54,11 +84,51 @@
     
 \section{Inledning}
     \subsection{Bakgrund}
+    Alten har en avdelning, Training, som arbetar med att sälja kurser främst till andra företag men även internt samt öppna kurser. I dagsläget sker planeringen av dessa kurser i Excel-dokument som skickas fram och tillbaka mellan Training och Invoice-avdelningen. Detta arbetssätt har varit rörigt och lätt att det blivit fel. \newline
+    Training har då önskat ett system som de ska kunna använda för att planera kurser med alla kostnader och intäkter, kommunicera med Invoice samt göra budgetar.\newline
+    Projektet påbörjades av lia-studenter 2017. Henning och Max blev tilldelad projektet under båda våra lia-perioder.\newline
+    Efter 10 veckor av vår andra lia-period blev vi dock tilldelade ett annat projekt så vi har totalt arbetat med detta i 20 veckor.\newline
+    Arbetet skedde agilt med kundmöten nästan veckovis. Under dessa möten visade vi upp vad som gjorts och diskuterade vad vis kulle fokusera på här näst för att så snabbt som möjligt nå en första version som skulle kunna användas. 
     \subsection{Mål}
         \subsubsection{Projektmål}
+        Målet vi hade var alltså att få ut en första version av systemet som skulle kunna användas.
+För detta krävdes
+Roller - De olika användarna av systemet ska kunna göra olika saker. Invoice ska t.ex inte kunna komma åt eller kunna ändra något i kurserna förutom att lägga till "workorder number". Totalt ska det vara fem olika roller som alla har olika behörigheter.
+Säkerhet - För att implementera roller ska även säkerhets biten ses över och delvis bytas ut. Vi ska användas oss av Json Web Tokens.
+Hämta ut kunder och leverantörer från internt system. I dagsläget görs skrivs allt detta manuellt och problem har uppstått. 
+Budget-vy - För att systemet ska vara användbart behövdes en ny budget-vy. I denna vyn ska budgetar kunna sättas för de olika säljarna, för öppna kurser samt en total budget.
+Här ska det också gå att se hur mycket av budgeten som sålts, hur mycket som är kvar samt gross margin.
+Testmiljö - Sätta upp en testmiljö där alla har tillgång att testa systemet och se att det fungerar som tänkt.
+Buggar - t.ex så sparas datum fel och fel kurser visas i kalendern. Se till att uträkningarna räknar på rätt saker. 
+Namngivning - Reda ut vad allt ska kallas. T.ex ska “utgifter” kallas “kostnader”
+Fakturerbara kurser - Ska vara checkboxes som visar ifall en utgift eller kostnad är fakturerad
+Pingfunktion - Det ska gå att pinga Invoice när ett kurstillfälle är redo för fakturering samt ifall ett fakturerbart kurstillfälle behöver förändringar.
+
+Kunden hade även önskningar för att arbetet i systemet skulle gå smidigare som vi skulle göra i mån av tid.
+Sökning på kurser. För att arbetsflödet ska gå smidigt behövs även en sökfunktion där det ska gå att söka på kursnummer, plats, kursnamn samt datumintervall.
+Bifoga dokument. Detta ska gå att bifoga och ladda ner dokument för varje kurstillfälle.
+Stilsättning - Utefter en UX-designers rekommendationer. 
+Varning i fall en med rollen invoice försöker lämna sidan där den fyller i workordernummer och inte har meddelat training.
+
         \subsubsection{Slutmål}
     \subsection{Metod}
         \subsubsection{Verktyg}
             \subsubsection{Utvecklingsverktyg}
             \subsubsection{Programmeringsverktyg}
+    \subsection{Kod}
+        \subsubsection{Säkerhet}
+        \begin{lstlisting}
+@Override
+protected void configure(HttpSecurity http) throws Exception {
+    http.sessionManagement()
+    .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+    http.cors().and().csrf().disable().authorizeRequests()
+    .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+            .antMatchers( "/*.*", "/assets/**", "/", "index.html", "**.js").permitAll()
+            .antMatchers(HttpMethod.POST, "/api/admin/login").permitAll()
+        //    .anyRequest().permitAll();
+            .anyRequest().authenticated();
+            http.apply(new JwtTokenFilterConfigurer(jwtTokenProvider));
+}
+            \end{lstlisting}
 \end{document}

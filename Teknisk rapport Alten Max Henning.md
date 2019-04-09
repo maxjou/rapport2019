@@ -12,7 +12,7 @@ För detta krävdes
 * Säkerhet. För att implementera roller ska även säkerhetsbiten ses över och delvis bytas ut. Vi ska användas oss av Json Web Tokens.
 * Budget-vy. För att systemet ska vara användbart behövdes en ny budget-vy. I denna vyn ska budgetar kunna sättas för de olika säljarna, för öppna kurser samt en total budget.
 Här ska det också gå att se hur mycket av budgeten som sålts, hur mycket som är kvar samt gross margin.
-* Bifoga dokument. Deta ska gå att bifoga och ladda ner dokument för varje kurstillfälle.
+* Bifoga dokument. Detta ska gå att bifoga och ladda ner dokument för varje kurstillfälle.
 * Sökning på kurser. För att arbetsflödet ska gå smidigt behövs även en sökfunktion där det ska gå att söka på kursnummer, plats, kursnamn samt datumintervall.
 * Testmiljö. Sätta upp en testmiljö där alla har tillgång att testa systemet och se att det fungerar som tänkt.
 * Buggar.
